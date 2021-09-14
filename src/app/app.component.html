@@ -1,0 +1,27 @@
+<h1>Full skill list:</h1>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Descricao</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let skillItem of skill">
+      <td>{{skillItem.id_skill}}</td>
+      <td>{{skillItem.descricao}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Grouped skill list, using 'groupBy' pipe:</h1>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Descricao</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let skillItem of skill | groupBy: 'descricao'">
+      <td>{{skillItem.key}}</td>
+      <td>{{skillItem.value | json}}</td>
+    </tr>
+  </tbody>
+</table>
